@@ -6,7 +6,7 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Obstacle")
+        if (collision.gameObject.tag == "Ground")
         {
             PlayerMovement.isOnTheGround = true;
         }
@@ -14,6 +14,7 @@ public class PlayerCollision : MonoBehaviour
         if(collision.gameObject.tag == "Obstacle")
         {
             movement.enabled = false;
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 }
