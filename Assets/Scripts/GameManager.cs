@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     
     public void CompleteLevel()
     {
-        Debug.Log("Level Complete");
+        completeLevelUI.SetActive(true);
     }
     public void EndGame()
     {
